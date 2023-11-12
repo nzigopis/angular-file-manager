@@ -10,10 +10,7 @@ export class AppComponent {
   value = '';
 
   constructor(private http: HttpClient) {
-    this.http.get('/api/listFiles').pipe(
-      // catchError(this.handleError)
-    );
-      // .subscribe((resp: any) => this.value = resp.text);
+    this.http.get('/api/listFiles').subscribe((resp: any) => this.value = resp.text);
   }
 
   private handleError(error: HttpErrorResponse) {
