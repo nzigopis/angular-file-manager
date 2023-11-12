@@ -12,7 +12,7 @@ app.http('listFiles', {
 
       return {
         headers: {'content-type': 'application/json'},
-        body: ['file1', 'file2.json']
+        body: JSON.stringify({files: ['file1', 'file2.json']})
       };
     }
 });
